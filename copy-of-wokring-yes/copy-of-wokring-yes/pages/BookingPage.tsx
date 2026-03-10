@@ -68,21 +68,21 @@ const BookingPage: React.FC = () => {
     }
 
     return (
-        <div className="min-h-screen bg-slate-50 py-24 px-6">
+        <div className="min-h-screen bg-slate-50 py-12 md:py-24 px-4 md:px-6">
             <div className="max-w-4xl mx-auto">
                 <header className="text-center mb-16">
                     <Link to="/pricing" className="text-[10px] font-black text-indigo-600 uppercase tracking-widest mb-6 inline-flex items-center gap-2 group">
                         <svg className="w-4 h-4 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M15 19l-7-7 7-7"></path></svg>
                         Back to Pricing
                     </Link>
-                    <h1 className="text-5xl font-black text-slate-900 tracking-tighter italic font-['Bangers'] mb-4">Enterprise <span className="text-indigo-600">Onboarding</span></h1>
+                    <h1 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tighter italic font-['Bangers'] mb-4">Enterprise <span className="text-indigo-600">Onboarding</span></h1>
                     <p className="text-slate-400 font-medium">Finalize your team's compliance journey.</p>
                 </header>
 
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
                     {/* Summary Sidebar */}
                     <div className="lg:col-span-1">
-                        <div className="bg-white p-8 rounded-[40px] border border-slate-100 shadow-xl shadow-slate-200/50 sticky top-32">
+                        <div className="bg-white p-6 md:p-8 rounded-[24px] md:rounded-[40px] border border-slate-100 shadow-xl shadow-slate-200/50 sticky top-20 md:top-32">
                             <h3 className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 mb-6">Selected Plan</h3>
                             <div className={`p-6 rounded-3xl mb-8 ${formData.plan === 'in-person' ? 'bg-indigo-600 text-white shadow-xl shadow-indigo-100' : 'bg-slate-900 text-white shadow-xl shadow-slate-100'}`}>
                                 <p className="text-[9px] font-black uppercase tracking-widest mb-1 opacity-70">{formData.plan === 'in-person' ? 'Comprehensive' : 'Standard'}</p>
@@ -114,7 +114,7 @@ const BookingPage: React.FC = () => {
 
                     {/* Form */}
                     <div className="lg:col-span-2">
-                        <form onSubmit={handleSubmit} className="bg-white p-12 rounded-[56px] border border-slate-100 shadow-sm">
+                        <form onSubmit={handleSubmit} className="bg-white p-6 md:p-12 rounded-[32px] md:rounded-[56px] border border-slate-100 shadow-sm">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                                 <div className="col-span-2">
                                     <label className="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-3 ml-1">Company Entity</label>

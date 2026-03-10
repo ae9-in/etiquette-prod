@@ -8,6 +8,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -15,10 +21,13 @@ body {
   background-color: #f8fafc;
   color: #0f172a;
   line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 #root {
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 /* Utility classes */
@@ -26,11 +35,6 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
-}
-
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
 }
 
 /* Focus styles for accessibility */

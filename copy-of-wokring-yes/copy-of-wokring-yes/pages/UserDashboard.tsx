@@ -49,13 +49,13 @@ const UserDashboard: React.FC<Props> = ({ state: profile, xp, allUsers = [] }) =
 
   return (
     <div className="pb-24 bg-[#fcfcfd] min-h-screen">
-      <div className="max-w-7xl mx-auto px-6 py-16">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-16">
 
         <header className="mb-12">
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 text-slate-600 text-[10px] font-black uppercase tracking-widest mb-6 border border-slate-200">
             Employee Profile
           </span>
-          <h1 className="text-6xl font-black text-slate-900 tracking-tighter leading-none italic font-['Bangers'] mb-4">
+          <h1 className="text-4xl md:text-6xl font-black text-slate-900 tracking-tighter leading-none italic font-['Bangers'] mb-4">
             {profile.name}
           </h1>
           <p className="text-slate-400 font-bold uppercase text-xs tracking-widest">{profile.department} • Internal ID: {profile.id.slice(0, 8).toUpperCase()}</p>
@@ -63,7 +63,7 @@ const UserDashboard: React.FC<Props> = ({ state: profile, xp, allUsers = [] }) =
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {/* XP & BADGE CARD */}
-          <div className="p-10 bg-slate-900 rounded-[56px] shadow-2xl border-4 border-black relative overflow-hidden group">
+          <div className="p-6 md:p-10 bg-slate-900 rounded-[32px] md:rounded-[56px] shadow-2xl border-4 border-black relative overflow-hidden group">
             <div className="absolute inset-0 halftone opacity-5 group-hover:opacity-10 transition-opacity"></div>
             <p className="text-[10px] font-black text-indigo-400 uppercase tracking-widest mb-8 relative z-10">Current Achievement Level</p>
 
@@ -113,7 +113,7 @@ const UserDashboard: React.FC<Props> = ({ state: profile, xp, allUsers = [] }) =
           <div className="lg:col-span-8">
             <h3 className="text-3xl font-black text-slate-900 mb-10 tracking-tight italic font-['Bangers']">Training Overview</h3>
 
-            <div className="bg-white border border-slate-100 rounded-[56px] overflow-hidden shadow-sm">
+            <div className="bg-white border border-slate-100 rounded-[32px] md:rounded-[56px] overflow-hidden shadow-sm overflow-x-auto">
               <table className="w-full text-left">
                 <thead>
                   <tr className="bg-slate-50/50 border-b border-slate-100">

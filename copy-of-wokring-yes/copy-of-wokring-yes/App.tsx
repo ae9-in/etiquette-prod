@@ -29,15 +29,15 @@ const Navigation: React.FC<{ onLogout: () => void }> = ({ onLogout }) => {
 
   if (loading || !profile) {
     return (
-      <nav className="glass border-b border-slate-200 sticky top-0 z-50 h-24 flex items-center">
+      <nav className="glass border-b border-slate-200 sticky top-0 z-50 h-16 md:h-24 flex items-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="flex justify-between items-center">
-            <div className="flex items-center gap-10">
+            <div className="flex items-center gap-4 md:gap-10">
               <Link to="/" className="flex items-center gap-3">
-                <img src="/assets/logo.png" alt="Etiquette Logo" className="h-20 w-auto" />
+                <img src="/assets/logo.png" alt="Etiquette Logo" className="h-12 md:h-20 w-auto" />
               </Link>
               {!loading && (
-                <div className="flex items-center space-x-8 border-l border-slate-200 pl-8">
+                <div className="hidden md:flex items-center space-x-8 border-l border-slate-200 pl-8">
                   <Link to="/" className={`text-[10px] font-black uppercase tracking-widest transition-colors ${location.pathname === '/' ? 'text-indigo-600' : 'text-slate-400 hover:text-indigo-600'}`}>Home</Link>
                   <Link to="/catalog" className={`text-[10px] font-black uppercase tracking-widest transition-colors ${location.pathname === '/catalog' ? 'text-indigo-600' : 'text-slate-400 hover:text-indigo-600'}`}>Catalog</Link>
                   <Link to="/pricing" className={`text-[10px] font-black uppercase tracking-widest transition-colors ${location.pathname === '/pricing' ? 'text-indigo-600' : 'text-slate-400 hover:text-indigo-600'}`}>Pricing</Link>
@@ -45,7 +45,7 @@ const Navigation: React.FC<{ onLogout: () => void }> = ({ onLogout }) => {
               )}
             </div>
             {!loading && (
-              <Link to="/login" className="px-4 py-2 rounded-full text-[9px] font-black uppercase tracking-widest transition-all border border-slate-200 bg-white text-slate-500 hover:bg-slate-50">
+              <Link to="/login" className="px-3 py-1.5 md:px-4 md:py-2 rounded-full text-[9px] font-black uppercase tracking-widest transition-all border border-slate-200 bg-white text-slate-500 hover:bg-slate-50 whitespace-nowrap">
                 Sign In
               </Link>
             )}
@@ -56,15 +56,15 @@ const Navigation: React.FC<{ onLogout: () => void }> = ({ onLogout }) => {
   }
 
   return (
-    <nav className="glass border-b border-slate-200 sticky top-0 z-50 h-24 flex items-center">
+    <nav className="glass border-b border-slate-200 sticky top-0 z-50 h-16 md:h-24 flex items-center">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="flex justify-between items-center">
-          <div className="flex items-center gap-10">
+          <div className="flex items-center gap-4 md:gap-10">
             <Link to="/" className="flex items-center gap-3">
-              <img src="/assets/logo.png" alt="Etiquette Logo" className="h-20 w-auto" />
+              <img src="/assets/logo.png" alt="Etiquette Logo" className="h-12 md:h-20 w-auto" />
             </Link>
 
-            <div className="flex items-center space-x-8 border-l border-slate-200 pl-8">
+            <div className="hidden md:flex items-center space-x-8 border-l border-slate-200 pl-8">
               {!isInternal ? (
                 <>
                   <Link to="/" className={`text-[10px] font-black uppercase tracking-widest transition-colors ${location.pathname === '/' ? 'text-indigo-600' : 'text-slate-400 hover:text-indigo-600'}`}>Home</Link>
@@ -85,23 +85,23 @@ const Navigation: React.FC<{ onLogout: () => void }> = ({ onLogout }) => {
             </div>
           </div>
 
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-3 md:gap-6">
             {profile ? (
               <>
                 <button
                   onClick={onLogout}
-                  className="px-4 py-2 rounded-full text-[9px] font-black uppercase tracking-widest transition-all border border-slate-200 bg-white text-slate-500 hover:bg-slate-50"
+                  className="px-3 py-1.5 md:px-4 md:py-2 rounded-full text-[9px] font-black uppercase tracking-widest transition-all border border-slate-200 bg-white text-slate-500 hover:bg-slate-50 whitespace-nowrap"
                 >
                   Logout
                 </button>
-                <Link to="/user" className={`h-12 w-12 rounded-2xl overflow-hidden border-2 shadow-lg transition-all ${location.pathname === '/user' ? 'border-indigo-600 scale-110' : 'border-white'}`}>
+                <Link to="/user" className={`h-9 w-9 md:h-12 md:w-12 rounded-2xl overflow-hidden border-2 shadow-lg transition-all shrink-0 ${location.pathname === '/user' ? 'border-indigo-600 scale-110' : 'border-white'}`}>
                   <img src={(profile as any).avatar || undefined} className="h-full w-full object-cover" alt="Profile" />
                 </Link>
               </>
             ) : (
               <Link
                 to="/login"
-                className="px-4 py-2 rounded-full text-[9px] font-black uppercase tracking-widest transition-all border border-slate-200 bg-white text-slate-500 hover:bg-slate-50"
+                className="px-3 py-1.5 md:px-4 md:py-2 rounded-full text-[9px] font-black uppercase tracking-widest transition-all border border-slate-200 bg-white text-slate-500 hover:bg-slate-50 whitespace-nowrap"
               >
                 Sign In
               </Link>
