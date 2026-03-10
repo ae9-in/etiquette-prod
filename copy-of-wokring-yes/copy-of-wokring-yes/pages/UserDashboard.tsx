@@ -117,10 +117,10 @@ const UserDashboard: React.FC<Props> = ({ state: profile, xp, allUsers = [] }) =
               <table className="w-full text-left">
                 <thead>
                   <tr className="bg-slate-50/50 border-b border-slate-100">
-                    <th className="px-10 py-6 text-[10px] font-black text-slate-500 uppercase tracking-widest">Course Title</th>
-                    <th className="px-10 py-6 text-[10px] font-black text-slate-500 uppercase tracking-widest">Date Finished</th>
-                    <th className="px-10 py-6 text-[10px] font-black text-slate-500 uppercase tracking-widest">Result</th>
-                    <th className="px-10 py-6 text-[10px] font-black text-slate-500 uppercase tracking-widest">Status</th>
+                    <th className="px-6 md:px-10 py-6 text-[10px] font-black text-slate-500 uppercase tracking-widest min-w-[150px]">Course Title</th>
+                    <th className="px-6 md:px-10 py-6 text-[10px] font-black text-slate-500 uppercase tracking-widest min-w-[120px]">Date Finished</th>
+                    <th className="px-6 md:px-10 py-6 text-[10px] font-black text-slate-500 uppercase tracking-widest min-w-[100px]">Result</th>
+                    <th className="px-6 md:px-10 py-6 text-[10px] font-black text-slate-500 uppercase tracking-widest min-w-[120px]">Status</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-50">
@@ -128,19 +128,19 @@ const UserDashboard: React.FC<Props> = ({ state: profile, xp, allUsers = [] }) =
                     const progress = profile.progress[course.id];
                     return (
                       <tr key={course.id} className="hover:bg-slate-50/30 transition-colors">
-                        <td className="px-10 py-8">
+                        <td className="px-6 md:px-10 py-6 md:py-8">
                           <div className="flex items-center gap-4">
                             <span className="text-xl">{course.icon}</span>
-                            <p className="font-black text-slate-900 text-base">{course.title.split(':')[0]}</p>
+                            <p className="font-black text-slate-900 text-sm md:text-base whitespace-nowrap">{course.title.split(':')[0]}</p>
                           </div>
                         </td>
-                        <td className="px-10 py-8 text-sm text-slate-500 font-medium">
+                        <td className="px-6 md:px-10 py-6 md:py-8 text-sm text-slate-500 font-medium">
                           {progress?.completionDate ? new Date(progress.completionDate).toLocaleDateString() : '—'}
                         </td>
-                        <td className="px-10 py-8 text-sm font-black text-slate-900">
+                        <td className="px-6 md:px-10 py-6 md:py-8 text-sm font-black text-slate-900">
                           {progress?.assessmentScore !== undefined ? `${progress.assessmentScore}%` : '—'}
                         </td>
-                        <td className="px-10 py-8">
+                        <td className="px-6 md:px-10 py-6 md:py-8">
                           <span className={`px-4 py-1.5 rounded-full text-[9px] font-black uppercase tracking-widest border whitespace-nowrap inline-block ${progress?.isCompleted
                             ? 'bg-emerald-50 text-emerald-700 border-emerald-100'
                             : 'bg-amber-50 text-amber-700 border-amber-100'

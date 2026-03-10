@@ -76,41 +76,41 @@ const Pricing: React.FC = () => {
                   <table className="w-full text-left">
                      <thead>
                         <tr className="bg-slate-900 text-white">
-                           <th className="p-8 text-[10px] font-black uppercase tracking-widest">Platform Capability</th>
-                           <th className="p-8 text-[10px] font-black uppercase tracking-widest text-center">Digital — ₹250/emp</th>
-                           <th className="p-8 text-[10px] font-black uppercase tracking-widest text-center">In-Person — ₹250/emp</th>
+                           <th className="p-4 md:p-8 text-[10px] font-black uppercase tracking-widest min-w-[150px]">Platform Capability</th>
+                           <th className="p-4 md:p-8 text-[10px] font-black uppercase tracking-widest text-center min-w-[110px]">Digital<br /><span className="text-[8px] opacity-70 mt-1 block tracking-normal">₹250/emp</span></th>
+                           <th className="p-4 md:p-8 text-[10px] font-black uppercase tracking-widest text-center min-w-[110px]">In-Person<br /><span className="text-[8px] opacity-70 mt-1 block tracking-normal">₹250/emp</span></th>
                         </tr>
                      </thead>
                      <tbody className="divide-y divide-slate-100">
                         <tr className="hover:bg-slate-50/50 transition-colors">
-                           <td className="p-8 font-bold text-slate-900">4 Compliance Courses</td>
-                           <td className="p-8 text-center text-emerald-500 font-black text-xl">●</td>
-                           <td className="p-8 text-center text-emerald-500 font-black text-xl">●</td>
+                           <td className="p-4 md:p-8 font-bold text-sm md:text-base text-slate-900">4 Compliance Courses</td>
+                           <td className="p-4 md:p-8 text-center text-emerald-500 font-black text-xl md:text-2xl">●</td>
+                           <td className="p-4 md:p-8 text-center text-emerald-500 font-black text-xl md:text-2xl">●</td>
                         </tr>
                         <tr className="hover:bg-slate-50/50 transition-colors">
-                           <td className="p-8 font-bold text-slate-900">Online Self-Paced Learning</td>
-                           <td className="p-8 text-center text-emerald-500 font-black text-xl">●</td>
-                           <td className="p-8 text-center text-emerald-500 font-black text-xl">●</td>
+                           <td className="p-4 md:p-8 font-bold text-sm md:text-base text-slate-900">Online Self-Paced Learning</td>
+                           <td className="p-4 md:p-8 text-center text-emerald-500 font-black text-xl md:text-2xl">●</td>
+                           <td className="p-4 md:p-8 text-center text-emerald-500 font-black text-xl md:text-2xl">●</td>
                         </tr>
                         <tr className="hover:bg-slate-50/50 transition-colors">
-                           <td className="p-8 font-bold text-slate-900">Verified PDF Certificates</td>
-                           <td className="p-8 text-center text-emerald-500 font-black text-xl">●</td>
-                           <td className="p-8 text-center text-emerald-500 font-black text-xl">●</td>
+                           <td className="p-4 md:p-8 font-bold text-sm md:text-base text-slate-900">Verified PDF Certificates</td>
+                           <td className="p-4 md:p-8 text-center text-emerald-500 font-black text-xl md:text-2xl">●</td>
+                           <td className="p-4 md:p-8 text-center text-emerald-500 font-black text-xl md:text-2xl">●</td>
                         </tr>
                         <tr className="hover:bg-slate-50/50 transition-colors">
-                           <td className="p-8 font-bold text-slate-900">Admin Progress Dashboard</td>
-                           <td className="p-8 text-center text-emerald-500 font-black text-xl">●</td>
-                           <td className="p-8 text-center text-emerald-500 font-black text-xl">●</td>
+                           <td className="p-4 md:p-8 font-bold text-sm md:text-base text-slate-900">Admin Progress Dashboard</td>
+                           <td className="p-4 md:p-8 text-center text-emerald-500 font-black text-xl md:text-2xl">●</td>
+                           <td className="p-4 md:p-8 text-center text-emerald-500 font-black text-xl md:text-2xl">●</td>
                         </tr>
                         <tr className="hover:bg-slate-50/50 transition-colors">
-                           <td className="p-8 font-bold text-slate-900">In-Person Expert Sessions</td>
-                           <td className="p-8 text-center text-slate-200 font-black text-xl">○</td>
-                           <td className="p-8 text-center text-indigo-500 font-black text-xl">●</td>
+                           <td className="p-4 md:p-8 font-bold text-sm md:text-base text-slate-900">In-Person Sessions</td>
+                           <td className="p-4 md:p-8 text-center text-slate-200 font-black text-xl md:text-2xl">○</td>
+                           <td className="p-4 md:p-8 text-center text-indigo-500 font-black text-xl md:text-2xl">●</td>
                         </tr>
                         <tr className="hover:bg-slate-50/50 transition-colors">
-                           <td className="p-8 font-bold text-slate-900">Employee Performance Optimization</td>
-                           <td className="p-8 text-center text-slate-200 font-black text-xl">○</td>
-                           <td className="p-8 text-center text-indigo-500 font-black text-xl">●</td>
+                           <td className="p-4 md:p-8 font-bold text-sm md:text-base text-slate-900">Employee Optimization</td>
+                           <td className="p-4 md:p-8 text-center text-slate-200 font-black text-xl md:text-2xl">○</td>
+                           <td className="p-4 md:p-8 text-center text-indigo-500 font-black text-xl md:text-2xl">●</td>
                         </tr>
                      </tbody>
                   </table>

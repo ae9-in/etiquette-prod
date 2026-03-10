@@ -7,7 +7,7 @@ import { createUser, deleteUser, updateUser, fetchEmployees } from '../systems/a
 interface AdminDashboardProps {
   state: UserProfile;
   allUsers: UserProfile[];
-  onUpdateEmployees: (newUsers: UserProfile[]) => void;
+  onUpdateEmployees: (user) => void;
   onReloadUsers: () => void;
 }
 
@@ -307,14 +307,14 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ state, allUsers = [], o
       <div className="bg-white border-b border-slate-200 py-12 px-6">
         <div className="max-w-7xl mx-auto">
           <header className="mb-12">
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
               <div>
-                <h1 className="text-5xl font-black text-slate-900 italic font-['Bangers'] tracking-tighter">Workforce Intelligence</h1>
+                <h1 className="text-4xl md:text-5xl font-black text-slate-900 italic font-['Bangers'] tracking-tighter">Workforce Intelligence</h1>
                 <p className="text-slate-400 font-bold uppercase text-[10px] tracking-[0.3em] mt-2">Administrative Command Center</p>
               </div>
               <button
                 onClick={() => setShowAddUser(true)}
-                className="px-8 py-4 bg-slate-900 text-white rounded-2xl font-black text-[11px] uppercase tracking-widest hover:bg-indigo-600 shadow-xl transition-all active:scale-95 flex items-center gap-2"
+                className="w-full md:w-auto px-6 py-4 bg-slate-900 text-white rounded-2xl font-black text-[11px] uppercase tracking-widest hover:bg-indigo-600 shadow-xl transition-all active:scale-95 flex items-center justify-center gap-2"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
@@ -349,7 +349,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ state, allUsers = [], o
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 py-12">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-12">
         {/* Table Controls */}
         <div className="flex flex-col lg:flex-row gap-6 mb-8 items-center justify-between">
           <div className="relative w-full lg:max-w-md">
@@ -362,12 +362,12 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ state, allUsers = [], o
             />
             <svg className="w-6 h-6 absolute left-5 top-1/2 -translate-y-1/2 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
           </div>
-          <div className="flex gap-3 overflow-x-auto">
+          <div className="flex gap-3 overflow-x-auto pb-4 -mb-4 w-full [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
             {departments.map(d => (
               <button
                 key={d}
                 onClick={() => setSelectedDept(d)}
-                className={`px-6 py-3 rounded-2xl text-[9px] font-black uppercase tracking-widest border transition-all whitespace-nowrap ${selectedDept === d ? 'bg-slate-900 text-white border-slate-900 shadow-lg' : 'bg-white text-slate-400 border-slate-200 hover:border-slate-300'
+                className={`px-6 py-3 rounded-2xl text-[9px] font-black uppercase tracking-widest border transition-all whitespace-nowrap shrink-0 snap-start ${selectedDept === d ? 'bg-slate-900 text-white border-slate-900 shadow-lg' : 'bg-white text-slate-400 border-slate-200 hover:border-slate-300'
                   }`}
               >
                 {d}
@@ -377,7 +377,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ state, allUsers = [], o
         </div>
 
         {/* Main Directory Table */}
-        <div className="bg-white rounded-[56px] border border-slate-100 shadow-2xl overflow-hidden">
+        <div className="bg-white rounded-[32px] md:rounded-[56px] border border-slate-100 shadow-2xl overflow-hidden overflow-x-auto">
           <table className="w-full text-left border-collapse">
             <thead>
               <tr className="bg-slate-50/50 border-b border-slate-100">
@@ -398,19 +398,19 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ state, allUsers = [], o
 
                 return (
                   <tr key={emp.id} className="hover:bg-slate-50/30 transition-all group">
-                    <td className="px-10 py-8">
-                      <div className="flex items-center gap-6">
-                        <img src={emp.avatar || undefined} className="h-14 w-14 rounded-2xl border-2 border-white shadow-xl grayscale group-hover:grayscale-0 transition-all duration-500" alt="" />
+                    <td className="px-6 md:px-10 py-6 md:py-8 min-w-[250px] md:min-w-0">
+                      <div className="flex items-center gap-4 md:gap-6">
+                        <img src={emp.avatar || undefined} className="h-10 w-10 md:h-14 md:w-14 rounded-2xl border-2 border-white shadow-xl grayscale group-hover:grayscale-0 transition-all duration-500" alt="" />
                         <div>
-                          <p className="text-lg font-black text-slate-900 leading-tight group-hover:text-indigo-600 transition-colors">{emp.name}</p>
+                          <p className="text-base md:text-lg font-black text-slate-900 leading-tight group-hover:text-indigo-600 transition-colors">{emp.name}</p>
                           <p className="text-[10px] text-slate-400 font-bold uppercase tracking-tight mt-1">{emp.department}</p>
                         </div>
                       </div>
                     </td>
-                    <td className="px-10 py-8">
+                    <td className="px-6 md:px-10 py-6 md:py-8 min-w-[200px] md:min-w-0">
                       <span className="text-xs font-bold text-slate-500 bg-slate-100 px-3 py-1.5 rounded-xl border border-slate-200/50">{emp.email}</span>
                     </td>
-                    <td className="px-10 py-8">
+                    <td className="px-6 md:px-10 py-6 md:py-8 min-w-[150px] md:min-w-0">
                       <span className={`px-4 py-2 rounded-xl text-[9px] font-black uppercase tracking-widest border ${emp.role === 'platform_admin'
                         ? 'bg-slate-900 text-white border-slate-900'
                         : 'bg-indigo-50 text-indigo-600 border-indigo-100'
@@ -418,7 +418,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ state, allUsers = [], o
                         {emp.role === 'platform_admin' ? 'Administrator' : 'Employee'}
                       </span>
                     </td>
-                    <td className="px-10 py-8">
+                    <td className="px-6 md:px-10 py-6 md:py-8 min-w-[250px] md:min-w-0">
                       <div className="flex items-center gap-4 min-w-[200px]">
                         <div className="flex-grow">
                           <div className="flex justify-between items-center mb-2 text-[9px] font-black uppercase tracking-widest">
@@ -435,7 +435,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ state, allUsers = [], o
                         </div>
                       </div>
                     </td>
-                    <td className="px-10 py-8">
+                    <td className="px-6 md:px-10 py-6 md:py-8">
                       <div className="flex gap-3">
                         <button
                           onClick={() => setManagedUserId(emp.id)}
