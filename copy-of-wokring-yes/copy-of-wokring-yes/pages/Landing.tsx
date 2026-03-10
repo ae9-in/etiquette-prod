@@ -100,7 +100,7 @@ const Landing: React.FC = () => {
             <div className="p-14 rounded-[64px] border border-white/10 bg-white/5 backdrop-blur-xl flex flex-col">
               <p className="text-[10px] font-black uppercase tracking-[0.4em] text-indigo-400 mb-4">Digital</p>
               <div className="flex items-baseline gap-2 mb-2">
-                <span className="text-5xl font-black text-white">₹200</span>
+                <span className="text-5xl font-black text-white">₹250</span>
                 <span className="text-slate-400 font-bold">/employee</span>
               </div>
               <p className="text-xs text-indigo-400 font-black uppercase tracking-widest mb-10">Includes 4 Courses</p>
@@ -110,7 +110,7 @@ const Landing: React.FC = () => {
                 <li className="flex items-center gap-3">✓ Verified PDF Certificates</li>
                 <li className="flex items-center gap-3">✓ Admin Progress Dashboard</li>
               </ul>
-              <button className="w-full py-6 rounded-[32px] border-2 border-white/20 font-black uppercase text-[11px] tracking-widest hover:bg-white hover:text-slate-900 transition-all">Get Started</button>
+              <Link to="/booking?plan=digital" className="w-full py-6 rounded-[32px] border-2 border-white/20 font-black uppercase text-center text-[11px] tracking-widest hover:bg-white hover:text-slate-900 transition-all flex items-center justify-center">Get Started</Link>
             </div>
 
             {/* In-Person Package */}
@@ -120,7 +120,7 @@ const Landing: React.FC = () => {
               </div>
               <p className="text-[10px] font-black uppercase tracking-[0.4em] text-indigo-200 mb-4">In-Person</p>
               <div className="flex items-baseline gap-2 mb-2">
-                <span className="text-5xl font-black text-white">₹499</span>
+                <span className="text-5xl font-black text-white">₹250</span>
                 <span className="text-indigo-200 font-bold">/employee</span>
               </div>
               <p className="text-xs text-indigo-200 font-black uppercase tracking-widest mb-10">Includes 4 Courses + Live Sessions</p>
@@ -132,7 +132,7 @@ const Landing: React.FC = () => {
                 <li className="flex items-center gap-3">✓ In-Person Expert Sessions</li>
                 <li className="flex items-center gap-3">✓ Employee Performance Optimization</li>
               </ul>
-              <button className="w-full py-6 rounded-[32px] bg-white text-indigo-600 font-black uppercase text-[11px] tracking-widest hover:bg-indigo-50 transition-all shadow-2xl">Book In-Person Plan</button>
+              <Link to="/booking?plan=in-person" className="w-full py-6 rounded-[32px] bg-white text-indigo-600 font-black uppercase text-[11px] text-center tracking-widest hover:bg-indigo-50 transition-all shadow-2xl flex items-center justify-center">Book In-Person Plan</Link>
             </div>
           </div>
 
@@ -143,9 +143,14 @@ const Landing: React.FC = () => {
       {/* Footer */}
       <footer className="py-12 border-t border-slate-100 text-center">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="text-xl font-black text-slate-900 flex items-center gap-3 tracking-tighter">
-            <div className="h-8 w-8 bg-slate-900 rounded-xl flex items-center justify-center text-white text-sm font-['Bangers'] italic">E</div>
-            <span>Etiquette <span className="text-indigo-600 italic">LMS</span></span>
+          <div className="flex items-center gap-3">
+            <img src="/assets/logo.png" alt="Etiquette Logo" className="h-12 w-auto" />
+          </div>
+          <div className="flex gap-8">
+            <Link to="/privacy" className="text-[9px] font-black text-slate-300 uppercase tracking-widest hover:text-indigo-600 transition-colors">Privacy</Link>
+            <Link to="/terms" className="text-[9px] font-black text-slate-300 uppercase tracking-widest hover:text-indigo-600 transition-colors">Terms</Link>
+            <Link to="/legal" className="text-[9px] font-black text-slate-300 uppercase tracking-widest hover:text-indigo-600 transition-colors">Legal</Link>
+            <Link to="/security" className="text-[9px] font-black text-slate-300 uppercase tracking-widest hover:text-indigo-600 transition-colors">Security</Link>
           </div>
           <p className="text-[10px] font-black text-slate-300 uppercase tracking-widest">© 2024 Etiquette Intelligence Inc. All rights reserved.</p>
         </div>

@@ -1,17 +1,17 @@
 import { MongoClient } from 'mongodb';
 import bcrypt from 'bcryptjs';
 
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://jishnunreddy_db_user:yJDLa5dDrOaXMpGC@cluster900.rtmxg8z.mongodb.net/etiquette_lms?retryWrites=true&w=majority&appName=Cluster900';
+const MONGODB_URI = process.env.MONGO_URI || process.env.MONGODB_URI || 'mongodb+srv://jishnunreddy_db_user:yJDLa5dDrOaXMpGC@cluster900.rtmxg8z.mongodb.net/etiquette_lms?retryWrites=true&w=majority&appName=Cluster900';
 
 async function seedDatabase() {
   const client = new MongoClient(MONGODB_URI);
-  
+
   try {
     await client.connect();
     console.log('✅ Connected to MongoDB');
-    
+
     const db = client.db();
-    
+
     // Drop existing collections for fresh start
     console.log('\n🗑️  Clearing existing data...');
     const collections = await db.listCollections().toArray();
@@ -19,13 +19,13 @@ async function seedDatabase() {
       await db.collection(collection.name).drop();
       console.log(`   Dropped: ${collection.name}`);
     }
-    
+
     // Create Users Collection
     console.log('\n👥 Creating users collection...');
-    
+
     const hashedAdminPassword = await bcrypt.hash('Akshara@123', 10);
     const hashedEmployeePassword = await bcrypt.hash('employee123', 10);
-    
+
     const users = [
       {
         email: 'etiqettelms@gmail.com',
@@ -151,17 +151,17 @@ async function seedDatabase() {
         updatedAt: new Date()
       }
     ];
-    
+
     const usersResult = await db.collection('users').insertMany(users);
     console.log(`   ✅ Created ${usersResult.insertedCount} users`);
-    
+
     // Create indexes for users collection
     console.log('\n📑 Creating indexes...');
     await db.collection('users').createIndex({ email: 1 }, { unique: true });
     await db.collection('users').createIndex({ role: 1 });
     await db.collection('users').createIndex({ department: 1 });
     console.log('   ✅ Created indexes on users collection');
-    
+
     // Create Courses Collection (metadata only, actual course content is in code)
     console.log('\n📚 Creating courses collection...');
     const courses = [
@@ -286,14 +286,14 @@ async function seedDatabase() {
         updatedAt: new Date()
       }
     ];
-    
+
     const coursesResult = await db.collection('courses').insertMany(courses);
     console.log(`   ✅ Created ${coursesResult.insertedCount} course records`);
-    
+
     await db.collection('courses').createIndex({ courseId: 1 }, { unique: true });
     await db.collection('courses').createIndex({ category: 1 });
     console.log('   ✅ Created indexes on courses collection');
-    
+
     // Create Activity Logs Collection
     console.log('\n📊 Creating activity_logs collection...');
     const activityLogs = [
@@ -338,15 +338,15 @@ async function seedDatabase() {
         timestamp: new Date(Date.now() - 10 * 24 * 60 * 60 * 1000) // 10 days ago
       }
     ];
-    
+
     const logsResult = await db.collection('activity_logs').insertMany(activityLogs);
     console.log(`   ✅ Created ${logsResult.insertedCount} activity logs`);
-    
+
     await db.collection('activity_logs').createIndex({ userId: 1 });
     await db.collection('activity_logs').createIndex({ timestamp: -1 });
     await db.collection('activity_logs').createIndex({ action: 1 });
     console.log('   ✅ Created indexes on activity_logs collection');
-    
+
     // Create Achievements Collection
     console.log('\n🏆 Creating achievements collection...');
     const achievements = [
@@ -384,14 +384,14 @@ async function seedDatabase() {
         earnedAt: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000)
       }
     ];
-    
+
     const achievementsResult = await db.collection('achievements').insertMany(achievements);
     console.log(`   ✅ Created ${achievementsResult.insertedCount} achievements`);
-    
+
     await db.collection('achievements').createIndex({ userId: 1 });
     await db.collection('achievements').createIndex({ earnedAt: -1 });
     console.log('   ✅ Created indexes on achievements collection');
-    
+
     // Create Notifications Collection
     console.log('\n🔔 Creating notifications collection...');
     const notifications = [
@@ -423,15 +423,15 @@ async function seedDatabase() {
         createdAt: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000)
       }
     ];
-    
+
     const notificationsResult = await db.collection('notifications').insertMany(notifications);
     console.log(`   ✅ Created ${notificationsResult.insertedCount} notifications`);
-    
+
     await db.collection('notifications').createIndex({ userId: 1 });
     await db.collection('notifications').createIndex({ read: 1 });
     await db.collection('notifications').createIndex({ createdAt: -1 });
     console.log('   ✅ Created indexes on notifications collection');
-    
+
     // Create System Settings Collection
     console.log('\n⚙️  Creating system_settings collection...');
     const systemSettings = {
@@ -449,15 +449,15 @@ async function seedDatabase() {
       version: '1.0.0',
       lastUpdated: new Date()
     };
-    
+
     await db.collection('system_settings').insertOne(systemSettings);
     console.log('   ✅ Created system settings');
-    
+
     // Print Summary
     console.log('\n' + '='.repeat(60));
     console.log('📊 DATABASE SEEDING SUMMARY');
     console.log('='.repeat(60));
-    
+
     const stats = {
       users: await db.collection('users').countDocuments(),
       courses: await db.collection('courses').countDocuments(),
@@ -466,7 +466,7 @@ async function seedDatabase() {
       notifications: await db.collection('notifications').countDocuments(),
       systemSettings: await db.collection('system_settings').countDocuments()
     };
-    
+
     console.log(`\n📈 Collections Created:`);
     console.log(`   • users: ${stats.users} documents`);
     console.log(`   • courses: ${stats.courses} documents`);
@@ -474,15 +474,15 @@ async function seedDatabase() {
     console.log(`   • achievements: ${stats.achievements} documents`);
     console.log(`   • notifications: ${stats.notifications} documents`);
     console.log(`   • system_settings: ${stats.systemSettings} documents`);
-    
+
     console.log(`\n👥 User Accounts Created:`);
     console.log(`   • Platform Admin: etiqettelms@gmail.com / Akshara@123`);
     console.log(`   • HR Manager: hr@company.com / hr123`);
     console.log(`   • Employees: john.doe@company.com, jane.smith@company.com, etc. / employee123`);
-    
+
     console.log(`\n✅ Database seeding completed successfully!`);
     console.log('='.repeat(60) + '\n');
-    
+
   } catch (error: any) {
     console.error('\n❌ Database seeding failed!');
     console.error('Error:', error.message);

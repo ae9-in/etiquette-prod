@@ -310,7 +310,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ state, allUsers = [], o
             <div className="flex items-center justify-between">
               <div>
                 <h1 className="text-5xl font-black text-slate-900 italic font-['Bangers'] tracking-tighter">Workforce Intelligence</h1>
-                <p className="text-slate-400 font-bold uppercase text-[10px] tracking-[0.3em] mt-2">Administrative Command Center • ISO 27001 Audited</p>
+                <p className="text-slate-400 font-bold uppercase text-[10px] tracking-[0.3em] mt-2">Administrative Command Center</p>
               </div>
               <button
                 onClick={() => setShowAddUser(true)}

@@ -6,10 +6,10 @@
     "dev": "tsx watch --env-file=.env index.ts",
     "start": "node dist/index.js",
     "build": "tsc",
-    "create-admin": "tsx create-admin.ts",
-    "seed": "tsx seed-database.ts",
-    "verify": "tsx verify-database.ts",
-    "migrate": "tsx migrate-complete-database.ts"
+    "create-admin": "tsx --env-file=.env create-admin.ts",
+    "seed": "tsx --env-file=.env seed-database.ts",
+    "verify": "tsx --env-file=.env verify-database.ts",
+    "migrate": "tsx --env-file=.env migrate-complete-database.ts"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",

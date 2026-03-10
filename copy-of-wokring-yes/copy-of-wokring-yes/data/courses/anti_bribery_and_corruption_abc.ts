@@ -1010,7 +1010,7 @@ const antiBriberyAndCorruptionAbc: Course = {
           options: [
             "Vendor has a long operational history and strong references.",
             "Vendor refuses to disclose ownership details or beneficial owners.",
-            "Vendor has ISO certifications and transparent audit reports."
+            "Vendor has transparent audit reports."
           ],
           correctIndex: 1,
           explanation: "Lack of ownership transparency increases corruption exposure and is a high-risk indicator."

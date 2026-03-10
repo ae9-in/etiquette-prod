@@ -15,6 +15,8 @@ import AdminDashboard from './pages/AdminDashboard';
 import Catalog from './pages/Catalog';
 import Pricing from './pages/Pricing';
 import UserDashboard from './pages/UserDashboard';
+import BookingPage from './pages/BookingPage';
+import { PrivacyPolicy, TermsAndConditions, SecurityPolicy, LegalNotice } from './pages/LegalPages';
 import GamificationFX from './components/GamificationFX';
 import { XP_RULES } from './systems/gamification';
 import { loadSession, saveProfile, saveUsers, saveXP, getDefaultSession } from './systems/appData';
@@ -27,13 +29,12 @@ const Navigation: React.FC<{ onLogout: () => void }> = ({ onLogout }) => {
 
   if (loading || !profile) {
     return (
-      <nav className="glass border-b border-slate-200 sticky top-0 z-50 h-20 flex items-center">
+      <nav className="glass border-b border-slate-200 sticky top-0 z-50 h-24 flex items-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-10">
-              <Link to="/" className="text-2xl font-black text-slate-900 flex items-center gap-3 tracking-tighter">
-                <div className="h-10 w-10 bg-indigo-600 rounded-2xl flex items-center justify-center text-white text-xl shadow-xl shadow-indigo-100 font-['Bangers'] tracking-normal italic">E</div>
-                <span className="hidden sm:inline">Etiquette <span className="text-indigo-600 italic">LMS</span></span>
+              <Link to="/" className="flex items-center gap-3">
+                <img src="/assets/logo.png" alt="Etiquette Logo" className="h-20 w-auto" />
               </Link>
               {!loading && (
                 <div className="flex items-center space-x-8 border-l border-slate-200 pl-8">
@@ -55,13 +56,12 @@ const Navigation: React.FC<{ onLogout: () => void }> = ({ onLogout }) => {
   }
 
   return (
-    <nav className="glass border-b border-slate-200 sticky top-0 z-50 h-20 flex items-center">
+    <nav className="glass border-b border-slate-200 sticky top-0 z-50 h-24 flex items-center">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-10">
-            <Link to="/" className="text-2xl font-black text-slate-900 flex items-center gap-3 tracking-tighter">
-              <div className="h-10 w-10 bg-indigo-600 rounded-2xl flex items-center justify-center text-white text-xl shadow-xl shadow-indigo-100 font-['Bangers'] tracking-normal italic">E</div>
-              <span className="hidden sm:inline">Etiquette <span className="text-indigo-600 italic">LMS</span></span>
+            <Link to="/" className="flex items-center gap-3">
+              <img src="/assets/logo.png" alt="Etiquette Logo" className="h-20 w-auto" />
             </Link>
 
             <div className="flex items-center space-x-8 border-l border-slate-200 pl-8">
@@ -227,6 +227,11 @@ const App: React.FC = () => {
           <Route path="/" element={<Landing />} />
           <Route path="/catalog" element={<Catalog />} />
           <Route path="/pricing" element={<Pricing />} />
+          <Route path="/booking" element={<BookingPage />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/terms" element={<TermsAndConditions />} />
+          <Route path="/security" element={<SecurityPolicy />} />
+          <Route path="/legal" element={<LegalNotice />} />
           <Route
             path="/login"
             element={

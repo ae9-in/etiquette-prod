@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
+import Register from './Register';
 
 const Login: React.FC = () => {
   const navigate = useNavigate();
+  const [showRegister, setShowRegister] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [email, setEmail] = useState('');
@@ -24,12 +26,17 @@ const Login: React.FC = () => {
     }
   };
 
+  if (showRegister) {
+    return <Register onToggle={() => setShowRegister(false)} />;
+  }
+
   return (
     <div className="min-h-screen bg-slate-50 flex items-center justify-center p-6">
       <div className="max-w-md w-full">
         <div className="text-center mb-12">
-          <div className="h-16 w-16 bg-indigo-600 rounded-[24px] flex items-center justify-center text-white text-3xl font-black shadow-2xl shadow-indigo-200 mx-auto mb-8 font-['Bangers'] italic">E</div>
-          <h1 className="text-4xl font-black text-slate-900 tracking-tight mb-3 italic font-['Bangers']">Etiquette LMS</h1>
+          <div className="flex items-center gap-3 justify-center mb-8">
+            <img src="/assets/logo.png" alt="Etiquette Logo" className="h-14 w-auto" />
+          </div>
           <p className="text-slate-500 font-medium">Sign in to access your workspace</p>
         </div>
 
@@ -79,6 +86,15 @@ const Login: React.FC = () => {
               {loading ? 'Signing in...' : 'Sign in'}
             </button>
           </form>
+
+          <div className="mt-8 pt-8 border-t border-slate-50 text-center">
+            <button
+              onClick={() => setShowRegister(true)}
+              className="text-[10px] font-black uppercase tracking-[0.2em] text-indigo-600 hover:text-indigo-700 transition-colors"
+            >
+              Don't have an account? Register Now
+            </button>
+          </div>
         </div>
 
         <p className="mt-12 text-center text-[10px] text-slate-300 font-black uppercase tracking-[0.3em]">
@@ -90,3 +106,4 @@ const Login: React.FC = () => {
 };
 
 export default Login;
+

@@ -28,7 +28,7 @@ const Pricing: React.FC = () => {
                <div className="p-12 rounded-[56px] border-2 border-slate-100 bg-white flex flex-col hover:border-indigo-100 transition-all duration-500 shadow-sm">
                   <p className="text-[10px] font-black uppercase tracking-[0.4em] text-slate-400 mb-4">Digital</p>
                   <div className="flex items-baseline gap-2 mb-2">
-                     <span className="text-5xl font-black text-slate-900">₹200</span>
+                     <span className="text-5xl font-black text-slate-900">₹250</span>
                      <span className="text-slate-400 font-bold">/employee</span>
                   </div>
                   <p className="text-xs text-indigo-600 font-black uppercase tracking-widest mb-10">Includes 4 Courses</p>
@@ -40,7 +40,7 @@ const Pricing: React.FC = () => {
                      <li className="flex items-center gap-4"><span className="text-emerald-500 text-lg">✓</span> Admin Progress Dashboard</li>
                      <li className="flex items-center gap-4 opacity-30"><span className="text-slate-300 text-lg">✗</span> In-Person Sessions</li>
                   </ul>
-                  <button className="w-full py-6 rounded-[32px] bg-slate-900 text-white font-black uppercase text-[11px] tracking-widest hover:bg-indigo-600 transition-all shadow-xl">Get Started</button>
+                  <Link to="/booking?plan=digital" className="w-full py-6 rounded-[32px] bg-slate-900 text-white font-black uppercase text-center text-[11px] tracking-widest hover:bg-indigo-600 transition-all shadow-xl flex items-center justify-center">Get Started</Link>
                </div>
 
                {/* In-Person Package - Recommended */}
@@ -50,7 +50,7 @@ const Pricing: React.FC = () => {
                   </div>
                   <p className="text-[10px] font-black uppercase tracking-[0.4em] text-indigo-400 mb-4">In-Person</p>
                   <div className="flex items-baseline gap-2 mb-2">
-                     <span className="text-5xl font-black text-white">₹499</span>
+                     <span className="text-5xl font-black text-white">₹250</span>
                      <span className="text-slate-400 font-bold">/employee</span>
                   </div>
                   <p className="text-xs text-indigo-400 font-black uppercase tracking-widest mb-10">Includes 4 Courses + Live Sessions</p>
@@ -63,7 +63,7 @@ const Pricing: React.FC = () => {
                      <li className="flex items-center gap-4"><span className="text-indigo-400 text-lg">✓</span> In-Person Expert Sessions</li>
                      <li className="flex items-center gap-4"><span className="text-indigo-400 text-lg">✓</span> Employee Performance Optimization</li>
                   </ul>
-                  <button className="w-full py-6 rounded-[32px] bg-indigo-600 text-white font-black uppercase text-[11px] tracking-widest hover:bg-indigo-500 transition-all shadow-2xl">Book In-Person Plan</button>
+                  <Link to="/booking?plan=in-person" className="w-full py-6 rounded-[32px] bg-indigo-600 text-white font-black uppercase text-center text-[11px] tracking-widest hover:bg-indigo-500 transition-all shadow-2xl flex items-center justify-center">Book In-Person Plan</Link>
                </div>
             </div>
          </section>
@@ -77,8 +77,8 @@ const Pricing: React.FC = () => {
                      <thead>
                         <tr className="bg-slate-900 text-white">
                            <th className="p-8 text-[10px] font-black uppercase tracking-widest">Platform Capability</th>
-                           <th className="p-8 text-[10px] font-black uppercase tracking-widest text-center">Digital — ₹200/emp</th>
-                           <th className="p-8 text-[10px] font-black uppercase tracking-widest text-center">In-Person — ₹499/emp</th>
+                           <th className="p-8 text-[10px] font-black uppercase tracking-widest text-center">Digital — ₹250/emp</th>
+                           <th className="p-8 text-[10px] font-black uppercase tracking-widest text-center">In-Person — ₹250/emp</th>
                         </tr>
                      </thead>
                      <tbody className="divide-y divide-slate-100">
@@ -142,11 +142,12 @@ const Pricing: React.FC = () => {
          {/* Footer */}
          <footer className="py-20 bg-slate-900 text-white text-center">
             <div className="max-w-7xl mx-auto px-6">
-               <p className="text-[11px] font-black text-slate-500 uppercase tracking-widest mb-10">© 2024 Etiquette Intelligence Inc. ISO 27001 Certified.</p>
+               <p className="text-[11px] font-black text-slate-500 uppercase tracking-widest mb-10">© 2024 Etiquette Intelligence Inc. All rights reserved.</p>
                <div className="flex justify-center gap-12 text-[10px] font-black uppercase tracking-[0.3em] text-indigo-400">
-                  <Link to="/" className="hover:text-white transition-colors">Legal</Link>
-                  <Link to="/" className="hover:text-white transition-colors">Privacy</Link>
-                  <Link to="/" className="hover:text-white transition-colors">Security</Link>
+                  <Link to="/legal" className="hover:text-white transition-colors">Legal</Link>
+                  <Link to="/privacy" className="hover:text-white transition-colors">Privacy</Link>
+                  <Link to="/security" className="hover:text-white transition-colors">Security</Link>
+                  <Link to="/terms" className="hover:text-white transition-colors">Terms</Link>
                </div>
             </div>
          </footer>
