@@ -120,7 +120,7 @@ const Landing: React.FC = () => {
               </div>
               <p className="text-[10px] font-black uppercase tracking-[0.4em] text-indigo-200 mb-4">In-Person</p>
               <div className="flex items-baseline gap-2 mb-2">
-                <span className="text-5xl font-black text-white">₹250</span>
+                <span className="text-5xl font-black text-white">₹450</span>
                 <span className="text-indigo-200 font-bold">/employee</span>
               </div>
               <p className="text-xs text-indigo-200 font-black uppercase tracking-widest mb-10">Includes 4 Courses + Live Sessions</p>

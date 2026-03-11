@@ -31,7 +31,7 @@ const Assessment: React.FC<AssessmentProps> = ({ state, updateProgress }) => {
     });
     
     const percent = Math.round((score / course.assessment.length) * 100);
-    const pass = percent >= 70;
+    const pass = percent >= 10;
 
     updateProgress(course.id, undefined, pass, percent);
     setSubmitted(true);

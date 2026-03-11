@@ -55,9 +55,9 @@ const BookingPage: React.FC = () => {
                     <div className="h-24 w-24 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-5xl mx-auto mb-8">
                         ✓
                     </div>
-                    <h1 className="text-4xl font-black text-slate-900 mb-6 italic font-['Bangers']">Booking Request Received!</h1>
+                    <h1 className="text-4xl font-black text-slate-900 mb-6 italic font-['Bangers']">Payment Successful!</h1>
                     <p className="text-slate-500 font-medium leading-relaxed mb-10">
-                        Our enterprise compliance team will review your {formData.plan === 'in-person' ? 'In-Person' : 'Digital'} plan request and contact you within 24 hours to finalize details.
+                        Your payment for the {formData.plan === 'in-person' ? 'In-Person' : 'Digital'} plan has been processed. Our enterprise compliance team will review your request and contact you within 24 hours to finalize details.
                     </p>
                     <Link to="/" className="inline-block px-12 py-5 bg-slate-900 text-white rounded-full font-black uppercase text-[11px] tracking-widest hover:bg-indigo-600 transition-all shadow-xl">
                         Return Home
@@ -88,7 +88,7 @@ const BookingPage: React.FC = () => {
                                 <p className="text-[9px] font-black uppercase tracking-widest mb-1 opacity-70">{formData.plan === 'in-person' ? 'Comprehensive' : 'Standard'}</p>
                                 <h4 className="text-2xl font-black mb-4">{formData.plan === 'in-person' ? 'In-Person Plan' : 'Digital Plan'}</h4>
                                 <div className="flex items-baseline gap-1">
-                                    <span className="text-3xl font-black">₹250</span>
+                                    <span className="text-3xl font-black">₹{formData.plan === 'in-person' ? '450' : '250'}</span>
                                     <span className="text-[10px] font-bold opacity-60">/employee</span>
                                 </div>
                             </div>
@@ -218,10 +218,10 @@ const BookingPage: React.FC = () => {
                                 {isSubmitting ? (
                                     <>
                                         <div className="h-4 w-4 border-2 border-white/20 border-t-white rounded-full animate-spin"></div>
-                                        Processing Request...
+                                        Processing Payment...
                                     </>
                                 ) : (
-                                    formData.plan === 'in-person' ? 'Confirm In-Person Booking' : 'Confirm Digital Onboarding'
+                                    formData.plan === 'in-person' ? 'Pay ₹450 & Confirm In-Person' : 'Pay ₹250 & Confirm Digital'
                                 )}
                             </button>
 

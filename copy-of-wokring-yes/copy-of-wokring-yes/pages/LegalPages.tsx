@@ -47,7 +47,7 @@ export const TermsAndConditions = () => (
     <LegalPage title="Terms & Conditions">
         <h2 className="text-2xl font-black text-slate-900 mb-6">1. User Licensing</h2>
         <p className="text-slate-600 leading-relaxed mb-8">
-            Licenses are granted on a per-employee basis at the rate of ₹250 per seat. Licenses are non-transferable once a course has been started by an employee.
+            Licenses are granted on a per-employee basis at the rate of ₹250 (Digital Plan) or ₹450 (In-Person Plan) per seat. Licenses are non-transferable once a course has been started by an employee.
         </p>
         <h2 className="text-2xl font-black text-slate-900 mb-6">2. Acceptable Use</h2>
         <p className="text-slate-600 leading-relaxed mb-8">

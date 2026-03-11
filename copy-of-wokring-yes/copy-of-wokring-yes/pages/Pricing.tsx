@@ -50,7 +50,7 @@ const Pricing: React.FC = () => {
                   </div>
                   <p className="text-[10px] font-black uppercase tracking-[0.4em] text-indigo-400 mb-4">In-Person</p>
                   <div className="flex items-baseline gap-2 mb-2">
-                     <span className="text-5xl font-black text-white">₹250</span>
+                     <span className="text-5xl font-black text-white">₹450</span>
                      <span className="text-slate-400 font-bold">/employee</span>
                   </div>
                   <p className="text-xs text-indigo-400 font-black uppercase tracking-widest mb-10">Includes 4 Courses + Live Sessions</p>
@@ -78,7 +78,7 @@ const Pricing: React.FC = () => {
                         <tr className="bg-slate-900 text-white">
                            <th className="p-4 md:p-8 text-[10px] font-black uppercase tracking-widest min-w-[150px]">Platform Capability</th>
                            <th className="p-4 md:p-8 text-[10px] font-black uppercase tracking-widest text-center min-w-[110px]">Digital<br /><span className="text-[8px] opacity-70 mt-1 block tracking-normal">₹250/emp</span></th>
-                           <th className="p-4 md:p-8 text-[10px] font-black uppercase tracking-widest text-center min-w-[110px]">In-Person<br /><span className="text-[8px] opacity-70 mt-1 block tracking-normal">₹250/emp</span></th>
+                           <th className="p-4 md:p-8 text-[10px] font-black uppercase tracking-widest text-center min-w-[110px]">In-Person<br /><span className="text-[8px] opacity-70 mt-1 block tracking-normal">₹450/emp</span></th>
                         </tr>
                      </thead>
                      <tbody className="divide-y divide-slate-100">
