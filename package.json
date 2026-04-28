@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "npm --prefix copy-of-wokring-yes/copy-of-wokring-yes install && npm --prefix copy-of-wokring-yes/copy-of-wokring-yes run build",
+    "preview": "npm --prefix copy-of-wokring-yes/copy-of-wokring-yes run preview",
+    "dev": "npm --prefix copy-of-wokring-yes/copy-of-wokring-yes run dev"
+  },
+  "dependencies": {
+    "mongodb": "^7.1.0"
+  }
+}
