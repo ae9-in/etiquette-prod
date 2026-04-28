@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Dependency directories
 node_modules/
 jspm_packages/
@@ -34,14 +33,8 @@ Thumbs.db
 
 # TypeScript
 *.tsbuildinfo
-=======
-.vercel
-.env
-.env.*
-*.env
-node_modules/
-.vscode/
-.DS_Store
-dist/
-build/
->>>>>>> 894db1381f1689a6ec802e46fb576e1c6ca8cf75
+
+# Documentation with secrets
+**/FRONTEND_DEPLOYMENT_FIX.md
+working/
+Working/
